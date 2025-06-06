@@ -130,6 +130,7 @@ function Navbar() {
 
   // Navbar items/link info
   const navItems = [
+    // 'Home' removed as per requirements
     { name: "Chat", href: "#chat" },
     { name: "About", href: "#about" },
     { name: "Help", href: "#help" },
