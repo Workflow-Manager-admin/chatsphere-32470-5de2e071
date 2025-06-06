@@ -226,6 +226,14 @@ function Navbar() {
               style={{
                 ...styles.link,
                 ...(hoveredIndex === idx ? navLinkHover : {}),
+                // highlight current route
+                ...(location && location.pathname === item.path
+                  ? { 
+                      fontWeight: 650, 
+                      borderBottom: `2.5px solid ${theme === "light" ? "#4F8CFF" : "#FFD166"}`,
+                      color: theme === "light" ? "#4F8CFF" : "#FFD166"
+                    }
+                  : {}),
                 transition:
                   hoveredIndex === idx
                     ? "color 0.17s, background 0.18s, box-shadow 0.16s, transform 0.20s"
@@ -237,8 +245,8 @@ function Navbar() {
               onFocus={() => setHoveredIndex(idx)}
               onBlur={() => setHoveredIndex(null)}
             >
-              <a
-                href={item.href}
+              <Link
+                to={item.path}
                 style={{
                   color: "inherit",
                   textDecoration: "none",
@@ -249,7 +257,7 @@ function Navbar() {
                 }}
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
