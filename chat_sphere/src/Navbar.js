@@ -1,4 +1,6 @@
+// Navbar with React Router navigation
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 // PUBLIC_INTERFACE
 function Navbar() {
@@ -128,13 +130,12 @@ function Navbar() {
             "0 0 16px #FFD166bb, 0 0 1.5px #FFD16666",
         };
 
-  // Navbar items/link info
+  // Navbar items/link info (paths correspond to React Router routes)
   const navItems = [
-    // 'Home' removed as per requirements
-    { name: "Chat", href: "#chat" },
-    { name: "About", href: "#about" },
-    { name: "Help", href: "#help" },
-    { name: "Contact", href: "#contact" },
+    { name: "Chat", path: "/chat" },
+    { name: "About", path: "/about" },
+    { name: "Help", path: "/help" },
+    { name: "Contact", path: "/contact" },
   ];
 
   // Light/Dark toggle implementation (icon based for style)
