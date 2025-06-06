@@ -2,8 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Navbar: Responsive app navigation with theme toggle. Uses React Router for navigation links.
+ */
 function Navbar() {
+  const location = typeof useLocation === "function" ? useLocation() : { pathname: "/" };
   // Persist theme with localStorage
   const [theme, setTheme] = useState(
     () =>
