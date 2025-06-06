@@ -138,11 +138,17 @@ function Navbar() {
   ];
 
   // Light/Dark toggle implementation (icon based for style)
+  // PUBLIC_INTERFACE
   function ThemeToggle() {
-    // SVG-based animated icon
+    /**
+     * Renders a toggle button: 
+     *   - Shows a sun icon if currently in light mode.
+     *   - Shows a moon icon if currently in dark mode.
+     * The icon updates immediately based on the current `theme` state.
+     */
     return (
       <button
-        aria-label="Toggle dark mode"
+        aria-label="Toggle dark/light mode"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         style={{
           border: "none",
@@ -164,9 +170,10 @@ function Navbar() {
         }}
         tabIndex={0}
       >
-        {theme === "dark" ? (
-          // Sun Icon for switching to Light
-          <svg width="25" height="25" fill="none" viewBox="1 1 22 22">
+        {/* Show Moon icon when in dark mode, Sun icon when in light mode */}
+        {theme === "light" ? (
+          // Sun Icon (visible in light mode, represents light)
+          <svg width="25" height="25" fill="none" viewBox="1 1 22 22" style={{transition: "all 0.25s"}}>
             <circle cx="12" cy="12" r="6.5"
               fill="#FFD166"
               stroke="#FFD166"
@@ -185,8 +192,8 @@ function Navbar() {
             </g>
           </svg>
         ) : (
-          // Moon Icon for switching to Dark
-          <svg width="25" height="25" fill="none" viewBox="1 1 22 22">
+          // Moon Icon (visible in dark mode, represents dark)
+          <svg width="25" height="25" fill="none" viewBox="1 1 22 22" style={{transition: "all 0.25s"}}>
             <path
               d="M19.89 16.53A8.1 8.1 0 0 1 12.99 20.1 8.09 8.09 0 0 1 7.17 6.07 7.99 7.99 0 0 0 7 8c0 5.12 4.04 9.25 9.03 9.25 1.26 0 2.47-.24 3.61-.7z"
               fill="#32394a"
