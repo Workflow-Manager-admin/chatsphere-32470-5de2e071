@@ -1,9 +1,49 @@
 :root {
+  --primary-light: #4F8CFF;
+  --primary-dark: #23272F;
+  --accent-light: #FFD166;
+  --accent-dark: #FFD166;
+  --glass-light: rgba(255,255,255,0.70);
+  --glass-dark: rgba(34,37,47,0.60);
+  --glass-border-light: rgba(60,60,60,0.08);
+  --glass-border-dark: rgba(255,255,255,0.09);
+
   --base-light: #00ffff;
   --base-dark: #00008b;
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+  --body-bg-light: #f5f8fc;
+  --body-bg-dark: #171921;
+  --nav-link-light: #32394a;
+  --nav-link-dark: #e7e7ea;
+}
+
+/* LIGHT/DARK THEME SUPPORT */
+body[data-theme='dark'] {
+  --body-bg: var(--body-bg-dark);
+  --text-color: #f6fafc;
+  --primary: var(--primary-dark);
+  --accent: var(--accent-dark);
+  --glass: var(--glass-dark);
+  --glass-border: var(--glass-border-dark);
+  --nav-link: var(--nav-link-dark);
+  background: var(--body-bg-dark);
+  color: #f5f7fa;
+  transition: background 0.3s, color 0.3s;
+}
+
+body[data-theme='light'] {
+  --body-bg: var(--body-bg-light);
+  --text-color: #222;
+  --primary: var(--primary-light);
+  --accent: var(--accent-light);
+  --glass: var(--glass-light);
+  --glass-border: var(--glass-border-light);
+  --nav-link: var(--nav-link-light);
+  background: var(--body-bg-light);
+  color: #23272F;
+  transition: background 0.3s, color 0.3s;
 }
 
 body {
