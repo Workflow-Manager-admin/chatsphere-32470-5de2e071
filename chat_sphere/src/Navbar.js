@@ -130,7 +130,6 @@ function Navbar() {
 
   // Navbar items/link info
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "Chat", href: "#chat" },
     { name: "About", href: "#about" },
     { name: "Help", href: "#help" },
